@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx.blue.conf:/etc/nginx/nginx.conf # Start with blue configuration
+    ports:
+      - "80:80"
+    networks:
+      - your_network
+
+networks:
+  your_network:
+    external: true

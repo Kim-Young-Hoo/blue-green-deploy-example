@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  web_green:
+    image: myapp:green
+    container_name: django_green
+    ports:
+      - "8001:8000"
+    environment:
+      DJANGO_ENV: green
+    networks:
+      - your_network
+
+
+networks:
+  your_network:
+    external: true
